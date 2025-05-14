@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+a.active{
+  color: #00A8E8;
+}
+.rating-container svg {
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
