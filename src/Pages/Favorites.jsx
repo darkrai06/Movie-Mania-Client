@@ -10,7 +10,7 @@ const Favorites = () => {
 
   useEffect(() => {
     fetch(
-      `https://b10-a10-server-side-mumtahinaa.vercel.app/favorite/${user?.email}`
+      `https://movie-mania-server-g47p.onrender.com/favorite/${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -31,7 +31,7 @@ const Favorites = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://b10-a10-server-side-mumtahinaa.vercel.app/favorite/${_id}`,
+          `https://movie-mania-server-g47p.onrender.com/favorite/${_id}`,
           {
             method: "DELETE",
           }

@@ -1,5 +1,5 @@
 {
-  "name": "b10-a10-client-side-mumtahinaa",
+  "name": "movie-mania-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,6 +15,7 @@
     "firebase": "^11.4.0",
     "localforage": "^1.10.0",
     "match-sorter": "^8.0.0",
+    "mongodb": "4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",

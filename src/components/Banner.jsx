@@ -31,14 +31,6 @@ const Banner = () => {
               <p className="mt-3 text-gray-400">
                 The long-awaited sequel to Gladiator follows the story of Lucius as he steps into the arena once more.
               </p>
-              {/* <div className="mt-4 flex gap-3">
-                <button className="px-4 py-2 text-white bg-[#9B5DE5] hover:bg-[#00A8E8] rounded-lg shadow-lg transition-all">
-                  Add to Favorites
-                </button>
-                <button className="px-4 py-2 text-white bg-[#00A8E8] hover:bg-[#9B5DE5] rounded-lg shadow-lg transition-all">
-                  See Details
-                </button>
-              </div> */}
             </div>
           </div>
           <a href="#slide3" className="absolute left-5 top-1/2 -translate-y-1/2 text-white text-3xl">❮</a>
@@ -65,14 +57,7 @@ const Banner = () => {
               <p className="mt-3 text-gray-400">
                 In a dystopian future, a scientist discovers a hidden utopia—but at what cost?
               </p>
-              {/* <div className="mt-4 flex gap-3">
-                <button className="px-4 py-2 text-white bg-[#9B5DE5] hover:bg-[#00A8E8] rounded-lg shadow-lg transition-all">
-                  Add to Favorites
-                </button>
-                <button className="px-4 py-2 text-white bg-[#00A8E8] hover:bg-[#9B5DE5] rounded-lg shadow-lg transition-all">
-                  See Details
-                </button>
-              </div> */}
+        
             </div>
           </div>
           <a href="#slide1" className="absolute left-5 top-1/2 -translate-y-1/2 text-white text-3xl">❮</a>

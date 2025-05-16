@@ -5,7 +5,7 @@ const TvSeries = () => {
   const [shows, setShows] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("https://b10-a10-server-side-mumtahinaa.vercel.app/tv-shows")
+    fetch("https://movie-mania-server-g47p.onrender.com/tv-shows")
       .then((res) => res.json())
       .then((data) => setShows(data.slice(0, 6)));
   }, []);

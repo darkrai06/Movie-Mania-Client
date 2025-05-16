@@ -36,7 +36,7 @@ const UpdateMovie = () => {
 
     const updatedMovie = { ...data, rating, userEmail: user?.email };
 
-    fetch(`https://b10-a10-server-side-mumtahinaa.vercel.app/movies/${_id}`, {
+    fetch(`https://movie-mania-server-g47p.onrender.com/movies/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -112,6 +112,9 @@ const UpdateMovie = () => {
               <option className="text-black" value="Comedy">
                 Comedy
               </option>
+              <option className="text-black" value="Comedy">
+                Thriller
+              </option>
               <option className="text-black" value="Sci-fi">
                 Sci-fi
               </option>
@@ -158,27 +161,14 @@ const UpdateMovie = () => {
                 required: "Select a release year",
               })}
             >
-              <option className="text-black" value="">
-                Select Year
-              </option>
-              <option className="text-black" value="2025">
-                2025
-              </option>
-              <option className="text-black" value="2024">
-                2024
-              </option>
-              <option className="text-black" value="2023">
-                2023
-              </option>
-              <option className="text-black" value="2022">
-                2022
-              </option>
-              <option className="text-black" value="2021">
-                2021
-              </option>
-              <option className="text-black" value="2020">
-                2020
-              </option>
+              {Array.from({ length: 2025 - 1990 + 1 }, (_, i) => {
+                  const year = 2025 - i;
+                  return (
+                    <option key={year} className="text-black" value={year}>
+                      {year}
+                    </option>
+                  );
+              })}
             </select>
             {errors.releaseYear && (
               <p className="text-red-500 text-sm">

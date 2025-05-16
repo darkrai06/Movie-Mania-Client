@@ -9,7 +9,7 @@ const AllMovies = () => {
   const [allMovies, setAllMovies] = useState(movies);
   useEffect(() => {
     fetch(
-      `https://b10-a10-server-side-mumtahinaa.vercel.app/movies?searchParams=${search}`
+      `https://movie-mania-server-g47p.onrender.com/movies?searchParams=${search}`
     )
       .then((res) => res.json())
       .then((data) => {

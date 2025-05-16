@@ -15,7 +15,7 @@ const MovieDetails = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://b10-a10-server-side-mumtahinaa.vercel.app/movies")
+    fetch("https://movie-mania-server-g47p.onrender.com/movies")
       .then((res) => res.json())
       .then((data) => {
         const filteredMovies = data.filter((m) => m._id !== movie._id);
@@ -36,7 +36,7 @@ const MovieDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://b10-a10-server-side-mumtahinaa.vercel.app/movies/${_id}`,
+          `https://movie-mania-server-g47p.onrender.com/movies/${_id}`,
           {
             method: "DELETE",
           }
@@ -70,7 +70,7 @@ const MovieDetails = () => {
 
  
 
-    fetch("https://b10-a10-server-side-mumtahinaa.vercel.app/favorite", {
+    fetch("https://movie-mania-server-g47p.onrender.com/favorite", {
       method: "POST",
       headers: {
         "content-type": "application/json",

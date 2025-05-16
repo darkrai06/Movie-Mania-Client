@@ -5,7 +5,7 @@ const Latest = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("https://b10-a10-server-side-mumtahinaa.vercel.app/Latest")
+    fetch("https://movie-mania-server-g47p.onrender.com/Latest")
       .then((res) => res.json())
       .then((data) => setMovies(data.slice(0, 6)));
   }, []);

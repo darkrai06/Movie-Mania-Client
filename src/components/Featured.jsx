@@ -6,7 +6,7 @@ const Featured = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://b10-a10-server-side-mumtahinaa.vercel.app/movies")
+    fetch("https://movie-mania-server-g47p.onrender.com/movies")
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.slice(0, 6));

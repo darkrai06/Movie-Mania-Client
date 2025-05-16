@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         path: "/movies",
         element: <AllMovies></AllMovies>,
         loader: () =>
-          fetch("https://b10-a10-server-side-mumtahinaa.vercel.app/movies"),
+          fetch("https://movie-mania-server-g47p.onrender.com/"),
       },
       {
         path: "/add-movie",
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         path: "/tv-shows",
         element: <TvShows></TvShows>,
         loader: () =>
-          fetch("https://b10-a10-server-side-mumtahinaa.vercel.app/tv-shows"),
+          fetch("https://movie-mania-server-g47p.onrender.com/tv-shows"),
       },
       {
         path: "/movie-details/:id",
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://b10-a10-server-side-mumtahinaa.vercel.app/movies/${params.id}`
+            `https://movie-mania-server-g47p.onrender.com/movies/${params.id}`
           ),
       },
       {
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
         element: <UpdateMovie></UpdateMovie>,
         loader: ({ params }) =>
           fetch(
-            `https://b10-a10-server-side-mumtahinaa.vercel.app/movies/${params.id}`
+            `https://movie-mania-server-g47p.onrender.com/movies/${params.id}`
           ),
       },
       {
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://b10-a10-server-side-mumtahinaa.vercel.app/tv-shows/${params.id}`
+            `https://movie-mania-server-g47p.onrender.com/tv-shows/${params.id}`
           ),
       },
       {

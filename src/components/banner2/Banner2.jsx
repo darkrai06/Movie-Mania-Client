@@ -16,7 +16,7 @@ const Banner2 = () => {
     const[movies,setMovies]= useState([]);
 
    useEffect(()=>{
-    fetch('https://b10-a10-server-side-mumtahinaa.vercel.app/banner')
+    fetch('https://movie-mania-server-g47p.onrender.com/banner')
     .then(res=>res.json())
     .then(data=>
        {
