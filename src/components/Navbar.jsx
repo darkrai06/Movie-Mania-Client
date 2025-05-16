@@ -5,13 +5,6 @@ import Logo from "./Logo";
 import { AuthContext } from "../Utility/AuthProvider";
 
 const Navbar = () => {
-//   const [theme, setTheme] = useState("light");
-
-//   const toggleTheme = () => {
-//     const newTheme = theme === "light" ? "dark" : "light";
-//     setTheme(newTheme);
-//     document.documentElement.setAttribute("data-theme", newTheme);
-//   };
 const {user,logOut} = useContext(AuthContext);
 
 
@@ -48,7 +41,6 @@ const {user,logOut} = useContext(AuthContext);
         </NavLink>
       </div>
 
-      {/* Navbar Center (Desktop Menu) */}
       <div className="navbar-center hidden lg:flex lg:ml-10 xl:ml-11">
         <ul className="menu menu-horizontal px-1 flex gap-4 md:gap-6">
           <NavLink to="/" className="text-sm md:text-base font-medium text-[#9B5DE5] hover:text-[#00A8E8]">Home</NavLink>
@@ -59,9 +51,8 @@ const {user,logOut} = useContext(AuthContext);
         </ul>
       </div>
 
-      {/* Navbar End */}
       <div className="navbar-end w-5/6 md:w-5/6 flex items-center gap-3 md:gap-4">
-        {/* User Profile */}
+
         {user && user?.email && user?.photoURL ? (
           <div className="tooltip tooltip-bottom  text-gray-400" data-tip={user?.email}>
             <img className="w-8 md:w-10 h-8 md:h-10 rounded-full hidden sm:block" src={user?.photoURL} alt="User" />
@@ -70,7 +61,6 @@ const {user,logOut} = useContext(AuthContext);
           <div className="tooltip tooltip-bottom pt-0 mt-0 gap-0 text-gray-400" data-tip={user?.email}><FaRegUserCircle className="text-[#00A8E8] w-8 md:w-10 h-8 md:h-10 hidden sm:block" /></div>
         )}
 
-        {/* Auth Buttons */}
         {user ? (
           <button onClick={logOut} className="btn btn-sm md:btn-md bg-[#9B5DE5] text-white hover:bg-[#00A8E8]">Log Out</button>
         ) : (
