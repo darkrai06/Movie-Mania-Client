@@ -1,7 +1,7 @@
 # Movie Mania - Your Ultimate Movie Portal
 
 ## Live URL
-Visit the live project: 
+Visit the live project: https://movie-maniacs.netlify.app/
 
 ## Project Overview
 
