@@ -4,7 +4,6 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 const AllMovies = () => {
   const navigate = useNavigate();
   const movies = useLoaderData();
-  const [search, setSearch] = useState("");
   
   const [allMovies, setAllMovies] = useState(movies);
   useEffect(() => {
@@ -21,15 +20,6 @@ const AllMovies = () => {
   return (
     <div className=" bg-black mx-auto">
       <div className="bg-black min-h-screen w-11/12 mx-auto py-4 xl:px-6  ">
-        <div className="form-control mb-6 ">
-          <input
-            type="text"
-            onChange={(e) => setSearch(e.target.value)}
-            name="search"
-            placeholder="Search by title"
-            className="input input-bordered w-full lg:w-1/3 md:w-1/2 mx-auto   bg-[#2A2A2A] text-white border-[#9B5DE5] focus:border-[#00A8E8]"
-          />
-        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allMovies.length > 0 ? (
