@@ -19,7 +19,7 @@ const AllMovies = () => {
   }, [search]);
 
   return (
-    <div className=" bg-black mx-auto mt-4">
+    <div className=" bg-black mx-auto pt-8">
       <div className="bg-black min-h-screen w-11/12 mx-auto py-4 xl:px-6  ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allMovies.length > 0 ? (
