@@ -57,75 +57,52 @@ const MovieDetails = () => {
     });
   };
 
- /* const handleFavorite = () => {
-    const favoriteData = {
-      Poster: movie.poster,
-      Title: movie.title,
-      Genre: movie.genre,
-      Duration: movie.duration,
-      ReleaseYear: movie.releaseYear,
-      Rating: movie.rating,
-      User: user.email,
-    };
-
- 
-
-    fetch("https://movie-mania-server-g47p.onrender.com/favorite", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(favoriteData),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.insertedId) {
-          Swal.fire("Added!", "Movie added to favorites!", "success");
-          
-        }
-      });
-  }; */
-
   const handleFavorite = () => {
-  fetch(`https://movie-mania-server-g47p.onrender.com/favorite?email=${user.email}`)
+  if (!user?.email) {
+    Swal.fire("Oops!", "You must be logged in to add favorites.", "error");
+    return;
+  }
+
+  // Fetch all favorites for this user
+  fetch(`https://movie-mania-server-g47p.onrender.com/favorite/${user.email}`)
     .then((res) => res.json())
     .then((favorites) => {
-      const alreadyExists = favorites.some(
+      const isAlreadyFavorite = favorites.some(
         (fav) => fav.Title === movie.title
       );
 
-      if (alreadyExists) {
-        Swal.fire("Already Added", "This movie is already in your favorites.", "error");
-        return;
+      if (isAlreadyFavorite) {
+        Swal.fire("Already Added", "This movie is already in your favorites.", "warning");
+      } else {
+        const favoriteData = {
+          Poster: movie.poster,
+          Title: movie.title,
+          Genre: movie.genre,
+          Duration: movie.duration,
+          ReleaseYear: movie.releaseYear,
+          Rating: movie.rating,
+          User: user.email,
+        };
+
+        fetch("https://movie-mania-server-g47p.onrender.com/favorite", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(favoriteData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire("Added!", "Movie added to favorites!", "success");
+            }
+          });
       }
-
-      const favoriteData = {
-        Poster: movie.poster,
-        Title: movie.title,
-        Genre: movie.genre,
-        Duration: movie.duration,
-        ReleaseYear: movie.releaseYear,
-        Rating: movie.rating,
-        User: user.email,
-      };
-
-      fetch("https://movie-mania-server-g47p.onrender.com/favorite", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(favoriteData),
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          if (result.insertedId) {
-            Swal.fire("Added!", "Movie added to favorites!", "success");
-          } else {
-            Swal.fire("Error", "Failed to add movie to favorites.", "error");
-          }
-        });
+    })
+    .catch((err) => {
+      console.error("Error checking favorites:", err);
+      Swal.fire("Error", "Could not check or add to favorites.", "error");
     });
 };
+
 
   return (
     <div className="min-h-screen flex items-start justify-center bg-black text-white lg:p-6 md:p-6  p-2">

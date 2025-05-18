@@ -43,15 +43,15 @@ const Footer = () => {
           </ul>
         </div>
         {/* address */}
-        <div class="footer-contact ">
+        <div className="footer-contact ">
         <h3 className="text-lg font-semibold text-[#9B5DE5] mb-4">Contact Us</h3>
-  <div class="contact-item flex items-center gap-2">
+  <div className="contact-item flex items-center gap-2">
   <MdOutlineLocalPhone className='text-[#9B5DE5] text-2xl' /> <p className='text-gray-300 text-sm'>+123 456 7890 </p>
   </div>
-  <div class="contact-item flex items-center gap-2">
+  <div className="contact-item flex items-center gap-2">
   <CgMail className='text-[#9B5DE5] text-2xl' /> <p className='text-gray-300 text-sm'>support@movieportal.com</p>
   </div>
-  <div class="contact-item flex items-center gap-2">
+  <div className="contact-item flex items-center gap-2">
   <LiaAddressBookSolid className='text-[#9B5DE5] text-2xl'/><p className='text-gray-300 text-sm'>123 Movie St., Film City, XYZ</p>
   </div>
 </div>

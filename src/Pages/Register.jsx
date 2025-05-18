@@ -15,11 +15,6 @@ const {register,setUser,user,googleSignIn}= useContext(AuthContext)
   const location = useLocation();
 
 
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
-
   const validatePassword = (password) => {
     return /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password);
   };
