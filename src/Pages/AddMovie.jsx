@@ -52,7 +52,7 @@ const AddMovie = () => {
           });
           reset();
           setRating(0);
-          setValue("rating", 0); // Explicitly reset rating in form
+          setValue("rating", 0); 
         }
       });
   };
