@@ -57,7 +57,7 @@ const MovieDetails = () => {
     });
   };
 
-  const handleFavorite = () => {
+ /* const handleFavorite = () => {
     const favoriteData = {
       Poster: movie.poster,
       Title: movie.title,
@@ -84,7 +84,48 @@ const MovieDetails = () => {
           
         }
       });
-  };
+  }; */
+
+  const handleFavorite = () => {
+  fetch(`https://movie-mania-server-g47p.onrender.com/favorite?email=${user.email}`)
+    .then((res) => res.json())
+    .then((favorites) => {
+      const alreadyExists = favorites.some(
+        (fav) => fav.Title === movie.title
+      );
+
+      if (alreadyExists) {
+        Swal.fire("Already Added", "This movie is already in your favorites.", "error");
+        return;
+      }
+
+      const favoriteData = {
+        Poster: movie.poster,
+        Title: movie.title,
+        Genre: movie.genre,
+        Duration: movie.duration,
+        ReleaseYear: movie.releaseYear,
+        Rating: movie.rating,
+        User: user.email,
+      };
+
+      fetch("https://movie-mania-server-g47p.onrender.com/favorite", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(favoriteData),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.insertedId) {
+            Swal.fire("Added!", "Movie added to favorites!", "success");
+          } else {
+            Swal.fire("Error", "Failed to add movie to favorites.", "error");
+          }
+        });
+    });
+};
 
   return (
     <div className="min-h-screen flex items-start justify-center bg-black text-white lg:p-6 md:p-6  p-2">
