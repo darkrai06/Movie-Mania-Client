@@ -121,7 +121,7 @@ const AddMovie = () => {
               <option className="text-black" value="Comedy">
                 Comedy
               </option>
-              <option className="text-black" value="Comedy">
+              <option className="text-black" value="Thriller">
                 Thriller
               </option>
               <option className="text-black" value="Sci-fi">

@@ -52,10 +52,12 @@ const UpdateMovie = () => {
             text: "Movie updated successfully",
             icon: "success",
             confirmButtonText: "Ok",
-          });
+          }).then(() => {
+        navigate(`/movie-details/${_id}`);
+    });;
           reset();
           setRating(0);
-          setValue("rating", 0); // Explicitly reset rating in form
+          setValue("rating", 0); 
         }
       });
   };
@@ -112,7 +114,7 @@ const UpdateMovie = () => {
               <option className="text-black" value="Comedy">
                 Comedy
               </option>
-              <option className="text-black" value="Comedy">
+              <option className="text-black" value="Thriller">
                 Thriller
               </option>
               <option className="text-black" value="Sci-fi">
