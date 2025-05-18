@@ -1,5 +1,4 @@
 import React from 'react';
-// import Banner from '../components/Banner';
 import Featured from '../components/Featured';
 import Banner2 from '../components/banner2/banner2';
 import Latest from '../components/Latest';

@@ -9,6 +9,7 @@ Movie Mania is a fully functional and user-friendly Movie Portal designed to sim
 
 ## Key Features
 
+
 - Authentication using Firebase (Login, Register, Google OAuth)
 
 - View Featured and All Movies with search and filter functionality
